@@ -18,4 +18,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails'
   s.add_dependency 'foreigner', '~> 1.7', '>= 1.7.4'
   s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'rspec-its', '1.2.0'
+  s.add_development_dependency 'test-unit', '3.0'
+  s.add_development_dependency 'shoulda-matchers', '2.8.0'
+  s.add_development_dependency 'factory_girl', '~> 4.5'
 end

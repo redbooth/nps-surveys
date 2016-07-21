@@ -1,5 +1,5 @@
 module NpsSurveys
-  class ResponsePresenter
+  class ResponseSerializer
     def initialize(response)
       @response = response
     end
