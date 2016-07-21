@@ -1,0 +1,6 @@
+/log/*.log
+/log/*.pid
+/spec/dummy/log/
+tmp/
+
+*~

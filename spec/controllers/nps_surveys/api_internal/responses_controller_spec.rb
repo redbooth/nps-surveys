@@ -2,30 +2,36 @@ require 'spec_helper'
 
 module NpsSurveys
   describe ApiInternal::ResponsesController do
-    include_context 'oauth authentication'
+    before(:each) do
+      user = FactoryGirl.create(:user)
+      NpsSurveys.current_user = lambda do
+        user
+      end
+    end
 
     routes { Engine.routes }
 
     describe '#index' do
-      describe 'authentication', skip_db: true do
-        it_behaves_like 'a oauth endpoint with scopes', [:all] do
-          subject { :index }
+      let!(:user_responses) do
+        %w{ hola1 hola2 hola3 }.map do |s|
+          r = Response.new
+          r.survey = s
+          r.user_id = NpsSurveys.current_user.call.id
+          r.save!
+          r
         end
       end
 
-      let!(:user_responses) do
-        [
-          Response.create(survey: 'hola1', user_id: user.id),
-          Response.create(survey: 'hola2', user_id: user.id),
-          Response.create(survey: 'hola3', user_id: user.id)
-        ]
-      end
       let!(:other_responses) do
-        Response.create(survey: 'hola4', user_id: create(:user))
+        r = Response.new
+        r.survey = 'hola4'
+        r.user_id = FactoryGirl.create(:user).id
+        r.save!
+        r
       end
 
       it 'returns all the responses associated by the logged in user' do
-        login_as(user)
+        login_as(:user)
 
         get :index
 
@@ -44,16 +50,8 @@ module NpsSurveys
     end
 
     describe '#create' do
-      describe 'authentication', skip_db: true do
-        it_behaves_like 'a oauth endpoint with scopes', [:all] do
-          let(:valid_params) { { survey: 'hola', score: 4 } }
-
-          subject { :create }
-        end
-      end
 
       context 'stores the response in the DB and returns it in the HTTP response' do
-        before { login_as(user) }
 
         context 'with valid parameters' do
           let(:valid_params) { { survey: 'hola', score: 4 } }

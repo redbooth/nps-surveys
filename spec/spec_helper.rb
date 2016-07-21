@@ -2,20 +2,19 @@ ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path("../../spec/dummy/config/environment", __FILE__)
 require 'rspec/rails'
+require 'rspec/its'
+require File.expand_path('../factories', __FILE__) unless defined?(FactoryGirl)
+require 'shoulda-matchers'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories.
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('../support/**/*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
   config.include AuthenticatedTestHelper
   config.include ApiJsonParser
 
   config.infer_spec_type_from_file_location!
-
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-  end
 
   config.mock_with :rspec do |mocks|
     mocks.verify_doubled_constant_names = true
