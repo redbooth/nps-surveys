@@ -1,0 +1,29 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (19.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (20.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSurveyResponses (20160614145840)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSurveyResponses (20160614145840)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSurveyResponses (20160614145840)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSurveyResponses (20160614145840)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSurveyResponses (20160614145840)
+  [1m[35m (11.2ms)[0m  CREATE TABLE `surveys_responses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `survey` varchar(255) NOT NULL, `user_id` int(11) NOT NULL, `score` int(11), `feedback` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (12.0ms)[0m  [1mALTER TABLE `surveys_responses` ADD CONSTRAINT `surveys_responses_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users`(id)[0m
+Mysql2::Error: Cannot add foreign key constraint: ALTER TABLE `surveys_responses` ADD CONSTRAINT `surveys_responses_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users`(id)
