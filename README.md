@@ -1,6 +1,9 @@
-nps_surveys
+NPS Surveys [![Gem](https://img.shields.io/gem/dtv/nps_surveys.svg?maxAge=2592000)](https://rubygems.org/gems/nps_surveys) <a href='http://redbooth.com' target='_blank'>![](https://www.dropbox.com/s/qo4yp1tpbsvqfya/made-at-redbooth-blue.svg?dl=1)</a>
 ==============================================================================
-This engine adds 2 new endpoints to store NPS user responses. Product owners will retrieve that information vis SQL.
+This engine adds 2 new API endpoints to store and consume NPS user responses.
+You can then analyze this information with the SQL queries listed below.
+
+https://gist.github.com/sonnenjon/bbab857e7d42eb381b33b8c20d41a47c
 
 Requirements
 ------------------------------------------------------------------------------
@@ -75,3 +78,5 @@ NpsSurveys.current_user = lambda { self.current_user }
 ```
 
 If you need to change any of those, create an initializer in the application overwriting them
+
+
