@@ -18,7 +18,7 @@ with the user that filled it.
 
 1. Add this line to you Gemfile
 ```
-gem 'nps_surveys', '0.0.1'
+gem 'nps_surveys', '0.2.0'
 ```
 
 2. Run migrations
@@ -71,10 +71,10 @@ of a the controller.
 Default values are:
 
 ```
-NpsSurveys.controller_parent_class = ::ApplicationController
-NpsSurveys.route_namespace = :api_internal
-NpsSurveys.route_path = 'api/internal'
-NpsSurveys.current_user = lambda { self.current_user }
+NPSSurveys.controller_parent_class = ::ApplicationController
+NPSSurveys.route_namespace = :api_internal
+NPSSurveys.route_path = 'api/internal'
+NPSSurveys.current_user = lambda { self.current_user }
 ```
 
 If you need to change any of those, create an initializer in the application overwriting them

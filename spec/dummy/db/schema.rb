@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160721092137) do
+ActiveRecord::Schema.define(:version => 20160728080202) do
 
-  create_table "surveys_responses", :force => true do |t|
+  create_table "nps_surveys_responses", :force => true do |t|
     t.string   "survey",     :null => false
     t.integer  "user_id",    :null => false
     t.integer  "score"
@@ -22,11 +22,15 @@ ActiveRecord::Schema.define(:version => 20160721092137) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "nps_surveys_responses", ["user_id"], :name => "nps_surveys_responses_user_id_fk"
+
   create_table "users", :force => true do |t|
     t.string   "login"
     t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_foreign_key "nps_surveys_responses", "users", name: "nps_surveys_responses_user_id_fk"
 
 end
