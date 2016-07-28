@@ -1,7 +1,7 @@
-module NpsSurveys
+module NPSSurveys
   module ApiInternal
 
-    class ResponsesController < NpsSurveys.controller_parent_class
+    class ResponsesController < NPSSurveys.controller_parent_class
       def create
         response = create_survey_response
 
@@ -15,7 +15,7 @@ module NpsSurveys
       end
 
       def index
-        responses = ::NpsSurveys::Response.where(user_id: NpsSurveys.current_user.call.id).map do |response|
+        responses = ::NPSSurveys::Response.where(user_id: NPSSurveys.current_user.call.id).map do |response|
           ResponseSerializer.new(response).to_json
         end
 
@@ -25,8 +25,8 @@ module NpsSurveys
       private
 
       def create_survey_response
-        response = ::NpsSurveys::Response.new
-        response.user_id = NpsSurveys.current_user.call.id
+        response = ::NPSSurveys::Response.new
+        response.user_id = NPSSurveys.current_user.call.id
         response.score = params[:score],
         response.feedback = params[:feedback],
         response.survey = params[:survey]

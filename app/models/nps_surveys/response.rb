@@ -1,4 +1,4 @@
-module NpsSurveys
+module NPSSurveys
   class Response < ActiveRecord::Base
     self.table_name = 'surveys_responses'
 

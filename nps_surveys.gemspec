@@ -6,7 +6,7 @@ require 'nps_surveys/version'
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = 'nps_surveys'
-  s.version     = NpsSurveys::VERSION
+  s.version     = NPSSurveys::VERSION
   s.authors     = ['Redbooth team']
   s.email       = ['support@redbooth.com']
   s.summary     = 'Summary of NPS Surveys.'

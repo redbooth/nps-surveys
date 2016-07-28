@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe NpsSurveys::Response do
+describe NPSSurveys::Response do
   describe 'validations' do
     subject { described_class.new }
 

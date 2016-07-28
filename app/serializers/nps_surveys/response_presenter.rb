@@ -1,4 +1,4 @@
-module NpsSurveys
+module NPSSurveys
   class ResponseSerializer
     def initialize(response)
       @response = response

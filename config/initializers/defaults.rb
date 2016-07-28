@@ -1,5 +1,5 @@
-NpsSurveys.controller_parent_class = ::ApplicationController
-NpsSurveys.route_namespace = :api_internal
-NpsSurveys.route_path = 'api/internal'
-NpsSurveys.route_scope = 'nps_surveys'
-NpsSurveys.current_user = lambda { self.current_user }
+NPSSurveys.controller_parent_class = ::ApplicationController
+NPSSurveys.route_namespace = :api_internal
+NPSSurveys.route_path = 'api/internal'
+NPSSurveys.route_scope = 'nps_surveys'
+NPSSurveys.current_user = lambda { self.current_user }
