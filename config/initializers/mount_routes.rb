@@ -1,3 +1,3 @@
 Rails.application.routes do
-  mount NpsSurveys::Engine, at: '/'
+  mount NPSSurveys::Engine, at: '/'
 end

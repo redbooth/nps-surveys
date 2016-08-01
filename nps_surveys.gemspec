@@ -6,7 +6,7 @@ require 'nps_surveys/version'
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = 'nps_surveys'
-  s.version     = NpsSurveys::VERSION
+  s.version     = NPSSurveys::VERSION
   s.authors     = ['Redbooth team']
   s.email       = ['support@redbooth.com']
   s.summary     = 'Summary of NPS Surveys.'
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency 'rails'
-  s.add_dependency 'foreigner', '~> 1.7', '>= 1.7.4'
+  s.add_dependency 'foreigner'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'rspec-its', '1.2.0'
   s.add_development_dependency 'test-unit', '3.0'

@@ -1,6 +1,6 @@
-module NpsSurveys
+module NPSSurveys
   class Engine < ::Rails::Engine
-    isolate_namespace NpsSurveys
+    isolate_namespace NPSSurveys
 
     initializer :append_migrations do |app|
       unless app.root.to_s.match root.to_s

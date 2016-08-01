@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-module NpsSurveys
+module NPSSurveys
   describe ApiInternal::ResponsesController do
     before(:each) do
       user = FactoryGirl.create(:user)
-      NpsSurveys.current_user = lambda do
+      NPSSurveys.current_user = lambda do
         user
       end
     end
@@ -16,7 +16,7 @@ module NpsSurveys
         %w{ hola1 hola2 hola3 }.map do |s|
           r = Response.new
           r.survey = s
-          r.user_id = NpsSurveys.current_user.call.id
+          r.user_id = NPSSurveys.current_user.call.id
           r.save!
           r
         end
