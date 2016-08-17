@@ -15,7 +15,7 @@ module NPSSurveys
       end
 
       def index
-        responses = ::NPSSurveys::Response.where(user_id: NPSSurveys.current_user.call.id).map do |response|
+        responses = ::NPSSurveys::Response.where(user_id: NPSSurveys.current_user.call(self).id).map do |response|
           ResponseSerializer.new(response).to_json
         end
 
@@ -26,9 +26,9 @@ module NPSSurveys
 
       def create_survey_response
         response = ::NPSSurveys::Response.new
-        response.user_id = NPSSurveys.current_user.call.id
-        response.score = params[:score],
-        response.feedback = params[:feedback],
+        response.user_id = NPSSurveys.current_user.call(self).id
+        response.score = params[:score].to_i
+        response.feedback = params[:feedback]
         response.survey = params[:survey]
         response.save
         response
