@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nps_surveys (0.2.0)
+    nps_surveys (0.2.1)
       foreigner
       rails
 
