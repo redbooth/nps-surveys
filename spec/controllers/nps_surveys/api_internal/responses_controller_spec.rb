@@ -4,9 +4,7 @@ module NPSSurveys
   describe ApiInternal::ResponsesController do
     before(:each) do
       user = FactoryGirl.create(:user)
-      NPSSurveys.current_user = lambda do
-        user
-      end
+      NPSSurveys.current_user = lambda { |controller| user }
     end
 
     routes { Engine.routes }
@@ -16,7 +14,7 @@ module NPSSurveys
         %w{ hola1 hola2 hola3 }.map do |s|
           r = Response.new
           r.survey = s
-          r.user_id = NPSSurveys.current_user.call.id
+          r.user_id = NPSSurveys.current_user.call(nil).id
           r.save!
           r
         end
