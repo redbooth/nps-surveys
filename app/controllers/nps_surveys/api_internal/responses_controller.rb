@@ -27,7 +27,7 @@ module NPSSurveys
       def create_survey_response
         response = ::NPSSurveys::Response.new
         response.user_id = NPSSurveys.current_user.call(self).id
-        response.score = params[:score].to_i
+        response.score = params[:score]
         response.feedback = params[:feedback]
         response.survey = params[:survey]
         response.save
