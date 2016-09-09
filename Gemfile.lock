@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nps_surveys (0.2.3)
+    nps_surveys (0.2.4)
       foreigner
       rails
 
@@ -114,7 +114,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.49)
+    tzinfo (0.3.51)
 
 PLATFORMS
   ruby
