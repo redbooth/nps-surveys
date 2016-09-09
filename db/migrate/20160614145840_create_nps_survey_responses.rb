@@ -1,4 +1,4 @@
-class CreateNpsSurveyResponses < ActiveRecord::Migration
+class CreateNPSSurveyResponses < ActiveRecord::Migration
   def change
     create_table :nps_surveys_responses do |t|
       t.string :survey, null: false
