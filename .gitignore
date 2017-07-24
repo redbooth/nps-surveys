@@ -2,5 +2,8 @@
 /log/*.pid
 /spec/dummy/log/
 tmp/
+/Gemfile.lock
+/.bundle
+/vendor/bundle
 
 *~
